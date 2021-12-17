@@ -1,13 +1,9 @@
-import { useState } from 'react'
 
-export default function AddShoppingItem({ addItemCallback, updateItemCallback }) {
+export default function AddShoppingItem({ addItemCallback, setItemName, itemName}) {
 
-    const [itemName, setItemName] = useState('');
 
-    const addItem = e => {
-
+    const addItem = (e) => {
         e.preventDefault();
-        console.log(itemName)
         if(itemName.trim() === '')
         return
 
@@ -15,8 +11,7 @@ export default function AddShoppingItem({ addItemCallback, updateItemCallback })
         setItemName('');
     }
 
-
-
+    
 
 
     return (
@@ -26,7 +21,7 @@ export default function AddShoppingItem({ addItemCallback, updateItemCallback })
                 <h3 className= "mt-3">Add item</h3>
             </div>
             <div className="input-group">
-                <input type="text" className="form-control" value={itemName} onChange={e => setItemName(e.target.value)} placeholder="Enter item" />
+                <input type="text" className="form-control" value={itemName} onChange={(e) => setItemName(e.target.value)} placeholder="Enter item" />
                 <button className="btn btn-success">Add Item</button>
             </div>
         </form>
