@@ -39,7 +39,8 @@ export const ItemList = ({item, removeItemCallback, changeClassCallback, changeI
                 }
                 <div>
                 <button onClick ={() => changeClass(item)} className = "btn btn-primary btn-sm mx-2"><ion-icon name="checkmark-outline"></ion-icon></button>
-                <button onClick={toggleChange} className = "btn btn-warning btn-sm mx-2">{change ? <ion-icon name="checkmark-done-outline"></ion-icon> : <ion-icon name="pencil-outline"></ion-icon>}</button>
+                <button onClick={toggleChange} className = "btn btn-warning btn-sm mx-2"><ion-icon name="pencil-outline"></ion-icon></button>
+                {/* <button onClick={toggleChange} className = "btn btn-warning btn-sm mx-2">{change ? <ion-icon name="checkmark-done-outline"></ion-icon> : <ion-icon name="pencil-outline"></ion-icon>}</button> */}
                 {/* { change
                    ? <button onClick={toggleChange} className = "btn btn-warning btn-sm mx-2"><ion-icon name="checkmark-done-outline"></ion-icon></button>
                     :<button onClick={handleSubmit} className = "btn btn-warning btn-sm mx-2"><ion-icon name="pencil-outline"></ion-icon></button>
