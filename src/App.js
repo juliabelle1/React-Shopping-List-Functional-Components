@@ -6,6 +6,7 @@ import Header from './components/Header'
 import { ItemList } from './components/ItemList';
 
 
+
 function App() {
   
   const[itemName, setItemName] = useState('');
@@ -65,18 +66,25 @@ const changeClassCallback = (item) =>{
     })
   }
 
+// Clear list
+
+  const clearList = () => {
+  
+    setItems([])
+    
+  }
+
 
 
   return (
     <div>
       <Header title = "Shopping list"/>
       <div className = " container mt-5">
-      <AddShoppingItem addItemCallback = { addItemCallback } itemName={itemName} setItemName={setItemName}/>
+      <AddShoppingItem addItemCallback = { addItemCallback } itemName={itemName} setItemName={setItemName} clearList = {clearList} />
       {
         items && items.map(item =>
           (<ItemList removeItemCallback = {removeItemCallback} item={item} key={item.id} changeItemCallback = {changeItemCallback} changeClassCallback = {changeClassCallback} /> ))
-      }
-
+        }
       {
         !items.length && (
           <div>
@@ -84,7 +92,10 @@ const changeClassCallback = (item) =>{
           </div>
         )
       }
+
       </div>
+
+      
     </div>
 
 

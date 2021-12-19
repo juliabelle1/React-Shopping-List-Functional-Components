@@ -1,5 +1,5 @@
 
-export default function AddShoppingItem({ addItemCallback, setItemName, itemName}) {
+export default function AddShoppingItem({ addItemCallback, setItemName, itemName, clearList}) {
 
 
     const addItem = (e) => {
@@ -22,7 +22,8 @@ export default function AddShoppingItem({ addItemCallback, setItemName, itemName
             </div>
             <div className="input-group">
                 <input type="text" className="form-control" value={itemName} onChange={(e) => setItemName(e.target.value)} placeholder="Enter item" />
-                <button className="btn btn-success">Add Item</button>
+                <button className="btn btn-success btn-sm">Add Item</button>
+                <button className="btn btn-danger btn-sm" onClick={() => clearList()} >Remove all</button>
             </div>
         </form>
         </div>
